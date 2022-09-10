@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "618831949444",
+    "project_id": "sneakerheadsdb",
+    "storage_bucket": "sneakerheadsdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618831949444:android:e260e5c948f7725d665cd1",
+        "android_client_info": {
+          "package_name": "com.example.sneakerheads"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618831949444-h0hratu0v3d2ri71r9l6ai6u8ln5efts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ24vEUhvSX-B35ibXhVjhCBb4IbCVpHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618831949444-h0hratu0v3d2ri71r9l6ai6u8ln5efts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

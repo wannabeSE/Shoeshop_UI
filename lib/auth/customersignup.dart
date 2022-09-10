@@ -38,8 +38,10 @@ class _CustomerSignUpState extends State<CustomerSignUp> {
       )
     
       );
-      if(res.statusCode==201){
+      if(res.statusCode==200){
         Fluttertoast.showToast(msg:'Account Created Succesfully');
+      }else{
+        Fluttertoast.showToast(msg:'Unable to create account');
       }
     }
     
@@ -63,7 +65,7 @@ class _CustomerSignUpState extends State<CustomerSignUp> {
               icon: const Icon(Icons.arrow_back_ios_new_rounded)
               ),
               Padding(
-                padding:const EdgeInsets.fromLTRB(10,20,10,40),
+                padding:const EdgeInsets.fromLTRB(10,10,10,5),
                 child: Row(
                   children: [
                     RichText(
