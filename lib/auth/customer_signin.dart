@@ -227,10 +227,21 @@ class _CustomerSignInState extends State<CustomerSignIn> {
                            }
                     }, child:const Text('Login',style: TextStyle(fontSize: 20,fontFamily: 'Montserrat',fontWeight: FontWeight.bold,color: Colors.white),),)
                 ],
+              ),
+              const SizedBox(height: 100,),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  FloatingActionButton(onPressed: (){
+                    Navigator.pushNamed(context, '/product_view');
+                  },child:const Text('Skip'),)
+                ],
               )
             ],      
                 ),
                  ),
+          
          ),
         
     );

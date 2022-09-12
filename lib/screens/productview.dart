@@ -3,6 +3,8 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:sneakerheads/screens/addproduct.dart';
+import 'package:sneakerheads/screens/productdetailscreen.dart';
 
 
 class ProductView extends StatefulWidget {
@@ -24,7 +26,7 @@ class _ProductViewState extends State<ProductView> {
       var res= await http.get(Uri.parse(url));
       var values=jsonDecode(res.body);
 
-      var data=values['mainCatList'];
+      var data=values['categories'];
       
       setState(() {
       for (int i=0;i<data.length;i++){
@@ -52,7 +54,8 @@ class _ProductViewState extends State<ProductView> {
         sneakers.add({
           'name':sData[i]['name'],
           'price':sData[i]['price'],
-          'image':sData[i]['pics']
+          'image':sData[i]['pics'],
+          'description':sData[i]['description']
         });
       }
     });
@@ -161,38 +164,41 @@ class _ProductViewState extends State<ProductView> {
                 childAspectRatio: 0.75,
             ), 
             itemBuilder: (context,index){
-              return Card(
-                margin:const EdgeInsets.all(10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
-                ),
-                // color: const Color(0Xff51557E),
-                // color: Color(0Xff2A2550),
-                color:const Color(0XffD3ECA7),
-                // shadowColor: const Color(0Xff1A4D2E),
-                shadowColor: Colors.deepOrangeAccent,
-                elevation: 10,
-                child: Column(
-                  children: [
-                     AspectRatio(
-                        aspectRatio: 1,
-                        child: Container(
-                          color:Colors.white,
-                          
-                          child:Padding(
-                            padding:const EdgeInsets.all(5.0),
-                            child: Image.network('${sneakers[index]['image']}'),
-                          )
-                          )
-                        ),
-                         
-                        Text('${sneakers[index]['name']}',style: const TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
-                         
-                         Padding(
-                           padding: const EdgeInsets.all(5.0),
-                           child: Text('Price: ${sneakers[index]['price']} Tk',style: const TextStyle(fontWeight: FontWeight.bold,color: Colors.black)),
-                         ),
-                  ],
+              return GestureDetector(
+                onTap: (() => Navigator.push(context, MaterialPageRoute(builder: ((context) => ProductDetails(sneaker:sneakers[index]))))),
+                child: Card(
+                  margin:const EdgeInsets.all(10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  // color: const Color(0Xff51557E),
+                  // color: Color(0Xff2A2550),
+                  color:const Color(0XffD3ECA7),
+                  // shadowColor: const Color(0Xff1A4D2E),
+                  shadowColor: Colors.deepOrangeAccent,
+                  elevation: 10,
+                  child: Column(
+                    children: [
+                       AspectRatio(
+                          aspectRatio: 1,
+                          child: Container(
+                            color:Colors.white,
+                            
+                            child:Padding(
+                              padding:const EdgeInsets.all(5.0),
+                              child: Image.network('${sneakers[index]['image']}'),
+                            )
+                            )
+                          ),
+                           
+                          Text('${sneakers[index]['name']}',style: const TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
+                           
+                           Padding(
+                             padding: const EdgeInsets.all(5.0),
+                             child: Text('Price: ${sneakers[index]['price']} Tk',style: const TextStyle(fontWeight: FontWeight.bold,color: Colors.black)),
+                           ),
+                    ],
+                  ),
                 ),
               );
             })

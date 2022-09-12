@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sneakerheads/auth/customer_signin.dart';
 import 'package:sneakerheads/demo.dart';
 import 'package:sneakerheads/screens/addproduct.dart';
+
 import 'package:sneakerheads/screens/productview.dart';
 import 'auth/customersignup.dart';
 import 'firebase_options.dart';
@@ -18,7 +19,7 @@ void main ()async{
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     
-    initialRoute: '/product_view',
+    initialRoute: '/splash',
    
     routes: {
       '/splash':(context) => const SplashScreen(),
@@ -27,6 +28,7 @@ void main ()async{
       '/demo':(context) => const Demo(),
       '/product_view':(context) => const ProductView(),
       '/add_prod':(context) => const AddProduct(),
+      // '/productdetail':(context) => ProductDetails(),
     },
     theme:ThemeData(brightness: Brightness.dark),
   )
