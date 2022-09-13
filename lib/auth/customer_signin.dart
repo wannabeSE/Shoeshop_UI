@@ -50,7 +50,7 @@ class _CustomerSignInState extends State<CustomerSignIn> {
         backgroundColor: Colors.white,
         textColor: Colors.black
         );
-    }else if(res.statusCode==200){
+    }else if(res.statusCode==201){
       isloading=true;
       showDialog(context: context, builder:(context){
         return const Center(child: CircularProgressIndicator()) ;
@@ -62,7 +62,7 @@ class _CustomerSignInState extends State<CustomerSignIn> {
     if(isloading==true){
       Future.delayed(const Duration(seconds: 2),(){
       Navigator.of(context).pop();
-      Navigator.pushNamed(context, '/demo');
+      Navigator.pushNamed(context, '/product_view');
       isloading= false;
     });
     }

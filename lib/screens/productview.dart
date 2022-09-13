@@ -79,7 +79,9 @@ class _ProductViewState extends State<ProductView> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          IconButton(onPressed: (){}, 
+          IconButton(onPressed: (){
+            Navigator.of(context).pop();
+          }, 
           icon:const Icon(Icons.arrow_back_ios_new_rounded, )),
           Row(
             children:const [
