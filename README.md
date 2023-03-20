@@ -1,6 +1,6 @@
 # sneakerheads
 
-A new Flutter project.
+Online store for selling sneakers 
 
 ## Getting Started
 ![VIEW!](https://firebasestorage.googleapis.com/v0/b/sneakerheadsdb.appspot.com/o/view.PNG?alt=media&token=c5cdf920-f89d-4599-8593-624dd8d4ddf4)
